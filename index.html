@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Reviews - CCTV Security Systems & Installation SP Road</title>
+    <title>CCTV Security Systems & Installation - SP Road</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,15 +47,12 @@
             padding: 15px;
             margin-bottom: 15px;
             background-color: #fafafa;
+            position: relative;
         }
         .stars {
             color: #f4c430;
             font-size: 18px;
             margin-bottom: 5px;
-        }
-        .reviewer {
-            font-weight: bold;
-            font-size: 15px;
         }
         .text {
             font-size: 14px;
@@ -63,20 +60,34 @@
             margin: 8px 0;
             line-height: 1.4;
         }
+        .copy-btn {
+            background-color: #34a853;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .copy-btn:hover {
+            background-color: #2d8e47;
+        }
         .btn-container {
             text-align: center;
             margin-top: 25px;
         }
         .review-btn {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 14px 28px;
             color: white;
             background-color: #1a73e8;
             text-decoration: none;
             border-radius: 6px;
             font-size: 16px;
             font-weight: bold;
-            transition: background 0.3s;
+            box-shadow: 0 2px 6px rgba(26,115,232,0.4);
         }
         .review-btn:hover {
             background-color: #1557b0;
@@ -87,55 +98,70 @@
 
 <div class="container">
     <div class="header">
-        <!-- Shop Logo Placeholder (Replace 'logo.png' with your logo image URL) -->
-        <img src="logo.JPG" alt="Shop Logo" class="shop-logo">
-        
+        <!-- Replace 'logo.png' with your actual logo image URL -->
+        <img src="logo.png" alt="Shop Logo" class="shop-logo">
         <h2>CCTV Security Systems & Installation - SP Road</h2>
         <p class="slogan">"Best CCTV Camera Shop & Installation Service in SP Road, Bangalore."</p>
     </div>
 
+    <p style="text-align: center; font-size: 14px; color: #666; margin-bottom: 20px;">
+        👉 Click <b>"Copy Review"</b> on any text below, then click <b>"Post Review on Google"</b> to paste it!
+    </p>
+
     <!-- Review 1 -->
     <div class="review-card">
         <div class="stars">★★★★★</div>
-        <div class="reviewer">Rajesh Kumar</div>
-        <div class="text">"Best CCTV camera shop in SP Road Bangalore! Got a complete 8-channel IP camera set for my wholesale shop at wholesale price. Installation was done neatly on the same day."</div>
+        <div class="text" id="rev1">Best CCTV camera shop in SP Road Bangalore! Got a complete 8-channel IP camera set for my shop at wholesale price. Installation was done neatly on the same day.</div>
+        <button class="copy-btn" onclick="copyAndRedirect('rev1')">📋 Copy Review & Open Google</button>
     </div>
 
     <!-- Review 2 -->
     <div class="review-card">
         <div class="stars">★★★★★</div>
-        <div class="reviewer">Sunil Mehta</div>
-        <div class="text">"Top security system dealer on SP Road. They offered genuine Dahua and Hikvision CCTV cameras with full warranty and fast installation service. Highly recommended!"</div>
+        <div class="text" id="rev2">Top security system dealer on SP Road. They offered genuine Dahua and Hikvision CCTV cameras with full warranty and fast installation service. Highly recommended!</div>
+        <button class="copy-btn" onclick="copyAndRedirect('rev2')">📋 Copy Review & Open Google</button>
     </div>
 
     <!-- Review 3 -->
     <div class="review-card">
         <div class="stars">★★★★★</div>
-        <div class="reviewer">Ananya Sharma</div>
-        <div class="text">"Contacted them for home CCTV installation in Bangalore. Very professional team, proper wiring concealment, and the night-vision camera clarity is excellent."</div>
+        <div class="text" id="rev3">Contacted them for home CCTV installation in Bangalore. Very professional team, proper wiring concealment, and the night-vision camera clarity is excellent.</div>
+        <button class="copy-btn" onclick="copyAndRedirect('rev3')">📋 Copy Review & Open Google</button>
     </div>
 
     <!-- Review 4 -->
     <div class="review-card">
         <div class="stars">★★★★★</div>
-        <div class="reviewer">Vikram Rao</div>
-        <div class="text">"If you are looking for CCTV camera sale and fitting in SP Road, this is the best place. Clear pricing, original products, and excellent mobile view setup."</div>
+        <div class="text" id="rev4">If you are looking for CCTV camera sale and fitting in SP Road, this is the best place. Clear pricing, original products, and excellent mobile view setup.</div>
+        <button class="copy-btn" onclick="copyAndRedirect('rev4')">📋 Copy Review & Open Google</button>
     </div>
 
     <!-- Review 5 -->
     <div class="review-card">
         <div class="stars">★★★★★</div>
-        <div class="reviewer">Praveen N</div>
-        <div class="text">"Great CCTV repair and installation service on SP Road. Quick response time and very reasonable price for security system setup."</div>
+        <div class="text" id="rev5">Great CCTV repair and installation service on SP Road. Quick response time and very reasonable price for security system setup.</div>
+        <button class="copy-btn" onclick="copyAndRedirect('rev5')">📋 Copy Review & Open Google</button>
     </div>
 
-    <!-- Call to Action Button -->
+    <!-- Direct Review Link Button -->
     <div class="btn-container">
         <a href="https://g.page/r/CUvNNIZmKA4LEBM/review" target="_blank" class="review-btn">
-            ⭐ Leave Us a Google Review
+            ⭐ Post Review on Google Direct
         </a>
     </div>
 </div>
+
+<script>
+    function copyAndRedirect(elementId) {
+        var textToCopy = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(textToCopy).then(function() {
+            alert("Review text copied! Opening Google Review page now. Simply paste (Ctrl+V or Long Press) there.");
+            window.open("https://g.page/r/CUvNNIZmKA4LEBM/review", "_blank");
+        }).catch(function(err) {
+            console.error('Copy failed: ', err);
+        });
+    }
+</script>
 
 </body>
 </html>
